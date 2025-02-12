@@ -17,7 +17,7 @@ module top #(parameter N = 2) (clk, rst, data, write, result, moveIn);
     output write, result;
 
     COUNTER #(.N(2)) programCounter (clk, rst, addr);
-    ROM #(.N(2)) program (addr, instruction);
+    ROM #(.N(2)) programROM (addr, instruction);
     ICU controlUnit(clk, rst, instruction[7:4], data, write, result);
 
     OutSelector SysScatch (rst, data, write, instruction[3], clk, instruction[2:0], scratch);

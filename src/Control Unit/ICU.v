@@ -1,5 +1,5 @@
-`include "Control Unit/LU.v"
-`include "Control Unit/CTRL.v"
+`include "LU.v"
+`include "CTRL.v"
 
 module ICU(clk, rst, I, data, write, result);
   input clk, rst;

@@ -1,5 +1,5 @@
-`include "LU.v"
-`include "CTRL.v"
+`include "Control Unit/LU.v"
+`include "Control Unit/CTRL.v"
 
 module ICU(clk, rst, I, data, write, result);
   input clk, rst;
@@ -18,7 +18,7 @@ module ICU(clk, rst, I, data, write, result);
     instReg <= rst ? 4'h0 : I;
   end
 
-  assign dataBus = data || (STO & RR);
+  assign dataBus = data || (STO && RR);
   assign result = RR;
   assign write = OEN & STO;
 endmodule

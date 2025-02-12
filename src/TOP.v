@@ -14,14 +14,19 @@ module top #(parameter N = 2) (clk, rst, data, write, result, moveIn);
     wire [7:0] scratch;
     wire [7:0] out;
 
+    wire zed;
+    wire topDataBus;
+
     output write, result;
 
     COUNTER #(.N(2)) programCounter (clk, rst, addr);
     ROM #(.N(2)) programROM (addr, instruction);
     ICU controlUnit(clk, rst, instruction[7:4], data, write, result);
 
-    OutSelector SysScatch (rst, data, write, instruction[3], clk, instruction[2:0], scratch);
-    OutSelector SysOut (rst, data, write, ~instruction[3] & write, clk, instruction[2:0], out);
+    OutSelector SysScatch (rst, topDataBus, write, instruction[3], clk, instruction[2:0], scratch);
+    OutSelector SysOut (rst, topDataBus, write, ~instruction[3] & write, clk, instruction[2:0], out);
 
-    InSelector SysIn (~clk & ~write & ~instruction[3], 1'b0, data, moveIn, instruction[2:0]);
+    InSelector SysIn (~clk & ~write & ~instruction[3], 1'b0, zed, moveIn, instruction[2:0]);
+
+    assign topDataBus = data || zed;
 endmodule

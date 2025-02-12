@@ -22,7 +22,7 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
+  ui[0]: "Data In"
   ui[1]: ""
   ui[2]: ""
   ui[3]: ""
@@ -32,8 +32,8 @@ pinout:
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
+  uo[0]: "Write Control"
+  uo[1]: "Result"
   uo[2]: ""
   uo[3]: ""
   uo[4]: ""
@@ -42,14 +42,14 @@ pinout:
   uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "Instruction + Data Input"
+  uio[1]: "Instruction + Data Input"
+  uio[2]: "Instruction + Data Input"
+  uio[3]: "Instruction + Data Input"
+  uio[4]: "Instruction + Data Input"
+  uio[5]: "Instruction + Data Input"
+  uio[6]: "Instruction + Data Input"
+  uio[7]: "Instruction + Data Input"
 
 # Do not change!
 yaml_version: 6

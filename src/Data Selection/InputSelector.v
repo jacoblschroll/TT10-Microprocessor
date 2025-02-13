@@ -8,7 +8,7 @@ module InSelector(enable, inhibit, zed, ins, addr);
 
     always @ (*) begin
         if (~enable) begin
-            zed <= 1'bz;
+            zed <= 1'b0;
         end else if (inhibit) begin
             zed <= 1'b0;
         end else begin

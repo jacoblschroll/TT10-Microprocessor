@@ -6,7 +6,7 @@ module InSelector(enable, inhibit, zed, ins, addr);
 
     output reg zed;
 
-    always @ (*) begin
+    always @ (posedge clk) begin
         if (~enable) begin
             zed <= 1'b0;
         end else if (inhibit) begin

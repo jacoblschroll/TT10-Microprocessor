@@ -15,7 +15,6 @@ module top #(parameter N = 2) (clk, rst, moveIn, outScratch, outSys);
     wire [7:0] instruction;
 
     wire zed;
-    wire topDataBus;
 
     wire write, result;
 

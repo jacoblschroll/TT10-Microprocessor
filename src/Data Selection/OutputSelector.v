@@ -8,7 +8,7 @@ module OutSelector(rst, data, write, CE, writeDisable, addr, outLatch);
 
     output reg [7:0] outLatch;
 
-    always @ (*) begin
+    always @ (posedge clk) begin
         if (rst) begin
             outLatch <= 8'h00;
         end else if (write & CE & ~writeDisable) begin

@@ -1,4 +1,4 @@
-module OutSelector(rst, data, write, CE, writeDisable, addr, outLatch);
+module OutSelector(clk, rst, data, write, CE, writeDisable, addr, outLatch);
     input rst;
     input data;
     input write;

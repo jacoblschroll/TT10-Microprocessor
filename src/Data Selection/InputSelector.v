@@ -1,4 +1,4 @@
-module InSelector(enable, inhibit, zed, ins, addr);
+module InSelector(clk, enable, inhibit, zed, ins, addr);
     input enable;
     input inhibit;
     input [2:0] addr;

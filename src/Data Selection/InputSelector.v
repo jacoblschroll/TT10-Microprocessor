@@ -1,5 +1,5 @@
 module InSelector(clk, enable, inhibit, zed, ins, addr);
-    input enable;
+    input clk, enable;
     input inhibit;
     input [2:0] addr;
     input [7:0] ins;

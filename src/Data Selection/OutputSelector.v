@@ -1,5 +1,5 @@
 module OutSelector(clk, rst, data, write, CE, writeDisable, addr, outLatch);
-    input rst;
+    input clk, rst;
     input data;
     input write;
     input CE;

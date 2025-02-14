@@ -25,5 +25,5 @@ module top #(parameter N = 2) (clk, rst, moveIn, outScratch, outSys);
     OutSelector SysScatch (clk, rst, zed, write, instruction[3], clk, instruction[2:0], outScratch);
     OutSelector SysOut (clk, rst, zed, write, ~instruction[3] & write, clk, instruction[2:0], outSys);
 
-    InSelector SysIn (~clk & ~write & ~instruction[3], 1'b0, zed, {result, moveIn}, instruction[2:0]);
+    InSelector SysIn (clk, ~clk & ~write & ~instruction[3], 1'b0, zed, {result, moveIn}, instruction[2:0]);
 endmodule
